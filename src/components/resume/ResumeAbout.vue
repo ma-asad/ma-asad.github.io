@@ -81,15 +81,15 @@ const isAboutOpen = ref(true)
             <span v-else>+</span>
         </h3>
         <p v-if="isAboutOpen" class="text-gray-600">
-            Final-year BSc (Hons) Computer Science (Systems Engineering) student
-            with professional experience as an IT Support Engineer and prior
-            training as a Software Trainee. Skilled in IT systems management,
-            including Active Directory (AD), Group Policy, Windows and Linux
-            Administration, and troubleshooting complex technical issues.
-            Certified as a Certified Cybersecurity Technician (CCT) by
-            EC-Council, with a solid foundation in networking and system
-            security. Focused on enhancing IT infrastructure, strengthening
-            security measures, and providing reliable technical support.
+            IT professional with experience as an IT Support Engineer, managing
+            IT systems, administering Active Directory and Group Policies, and
+            troubleshooting complex technical issues across Windows, Linux, and
+            Windows IoT environments. Skilled in ensuring reliable IT
+            infrastructure, implementing cost- effective solutions, and
+            enhancing system security. Certified Cybersecurity Technician (CCT)
+            by EC- Council, with a BSc (Hons) in Computer Science (Systems
+            Engineering). Dedicated to strengthening security, optimising IT
+            operations, and providing exceptional technical support.
         </p>
     </section>
 </template>
