@@ -12,7 +12,7 @@ const bullet = '•' // Define the bullet symbol
             class="text-2xl font-bold mb-4 cursor-pointer flex justify-between items-center"
             @click="isSkillsOpen = !isSkillsOpen"
         >
-            <span class="text-gray-800">Skills</span>
+            <span style="color: #444440">Skills</span>
             <span v-if="isSkillsOpen">−</span>
             <span v-else>+</span>
         </h3>

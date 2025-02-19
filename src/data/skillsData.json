@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "IT System Administration (Linux & Windows, O365 Administration)"
+        "name": "IT System Administration (Linux, Windows, M365, Hypervisors)"
     },
     {
         "id": 2,
-        "name": "Networking & Security"
+        "name": "Networking & Security (Firewalls, VPNs, Network Protocols)"
     },
     {
         "id": 3,
@@ -13,34 +13,30 @@
     },
     {
         "id": 4,
-        "name": "Identity and Access Management (IAM) (AD, Group Policy)"
+        "name": "Identity and Access Management (IAM) (AD, Group Policy, Authentication)"
     },
     {
         "id": 5,
-        "name": "Programming & Scripting (Python, Bash, Batch)"
+        "name": "Programming & Scripting (Python, C, JavaScript, Node.js, Bash, Batch, PowerShell)"
     },
     {
         "id": 6,
-        "name": "Documentation & Process Improvement"
+        "name": "IT Operations & Process Improvement: (ITSM, MDM, SOPs)"
     },
     {
         "id": 7,
-        "name": "Raspberry Pi"
+        "name": "Cybersecurity (Endpoint Security, SIEM, Vulnerability Management, Incident Response)"
     },
     {
         "id": 8,
-        "name": "Git"
+        "name": "Raspberry Pi, Arduino & Embedded Systems"
     },
     {
         "id": 9,
-        "name": "Communication"
+        "name": "Git & Version Control"
     },
     {
         "id": 10,
-        "name": "Team Management"
-    },
-    {
-        "id": 11,
-        "name": "Project Management"
+        "name": "Communication & Technical Documentation"
     }
 ]
