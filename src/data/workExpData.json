@@ -1,9 +1,21 @@
 [
     {
         "id": 1,
+        "title": "Engineer I, IT Service Desk",
+        "company": "Checkout.com",
+        "dateRange": "May 2025 - Present",
+        "responsibilities": [
+            "Provided customer support across different regions, addressing multiple inquiries daily across various topics.",
+            "Incident management and resolution for IT-related issues.",
+            "Managed IT service requests and escalations.",
+            "Work on Automation and process improvement projects."
+        ]
+    },
+    {
+        "id": 2,
         "title": "IT Support Engineer",
         "company": "Tropic Knits Group",
-        "dateRange": "June 2024 - Present",
+        "dateRange": "June 2024 - April 2025",
         "responsibilities": [
             "Responsible for managing and maintaining the IT infrastructure of the company.",
             "Led three projects at national and international levels.",
@@ -19,7 +31,7 @@
         ]
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Software Trainee",
         "company": "GammaTech Ltd",
         "dateRange": "June 2023 - May 2024",
