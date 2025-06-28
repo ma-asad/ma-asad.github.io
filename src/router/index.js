@@ -38,6 +38,14 @@ const router = createRouter({
             name: 'resume',
             component: ResumeView
         },
+        // Hidden redirect routes
+        {
+            path: '/nightschooling',
+            beforeEnter() {
+                window.location.href = 'https://mega.nz/folder/PcsiDKiJ#pwVpmb226xsYBaQen3G4kA';
+            }
+        },
+        // Catch-all route for 404 Not Found
         {
             path: '/:catchAll(.*)',
             name: '404',
