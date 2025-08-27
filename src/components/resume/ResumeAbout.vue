@@ -1,0 +1,123 @@
+<script setup>
+import { ref, computed } from 'vue'
+import skillsData from '@/data/skillsData.json'
+
+const isAboutOpen = ref(true)
+
+const skills = computed(() =>
+    skillsData.map((s) => {
+        const idx = s.name.indexOf(':')
+        if (idx > -1) {
+            return {
+                id: s.id,
+                label: s.name.slice(0, idx).trim(),
+                detail: s.name.slice(idx + 1).trim()
+            }
+        }
+        return { id: s.id, label: s.name, detail: '' }
+    })
+)
+</script>
+
+<template>
+    <!-- Intro & Contact Section -->
+    <section class="mb-12 rounded-lg bg-[#f4f4f4] py-8 px-4">
+        <h2 class="text-3xl font-bold mb-4 text-center">
+            <span style="color: #444440; letter-spacing: 0.1em"
+                >MOHAMMAD ASAD </span
+            ><span style="color: #828206; letter-spacing: 0.1em"
+                >ATTERKHAN</span
+            >
+        </h2>
+        <!-- contacts -->
+        <div
+            class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 text-sm"
+        >
+            <p>
+                <a
+                    href="tel:+23058455140"
+                    class="text-gray-600 flex items-center"
+                >
+                    <font-awesome-icon
+                        :icon="['fas', 'phone']"
+                        class="icon-size mr-1"
+                    />
+                    +230 5845 5140</a
+                >
+            </p>
+            <p>
+                <a
+                    href="mailto:masad.atterkhan@gmail.com"
+                    class="text-gray-600 flex items-center"
+                >
+                    <font-awesome-icon
+                        :icon="['fas', 'envelope']"
+                        class="icon-size mr-1"
+                    />
+                    masad.atterkhan@gmail.com</a
+                >
+            </p>
+            <p class="text-gray-600 flex items-center">
+                <a
+                    href="https://linkedin.com/in/maatterkhan"
+                    class="text-gray-600 flex items-center"
+                >
+                    <font-awesome-icon
+                        :icon="['fab', 'linkedin']"
+                        class="icon-size mr-1"
+                    />
+                    LinkedIn
+                </a>
+            </p>
+            <p class="text-gray-600 flex items-center">
+                <a
+                    href="https://github.com/ma-asad"
+                    target="_blank"
+                    class="text-gray-600 flex items-center"
+                >
+                    <font-awesome-icon
+                        :icon="['fab', 'github']"
+                        class="icon-size mr-1"
+                    />
+                    GitHub
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="mb-4">
+        <h3
+            class="text-2xl font-bold mb-4 cursor-pointer flex justify-between items-center"
+            @click="isAboutOpen = !isAboutOpen"
+        >
+            <span style="color: #444440">About Me</span>
+            <span v-if="isAboutOpen">−</span>
+            <span v-else>+</span>
+        </h3>
+        <div v-if="isAboutOpen" class="text-gray-600 space-y-2">
+            <p>
+                IT and Cybesersecurity professional with hands-on experience in system administration, IT support, and
+                cybersecurity. Skilled in managing IT infrastructure across Windows, Linux, and IoT environments. Holds a BSc (Hons) in Computer Science
+                (Systems Engineering) and also a Certified Cybersecurity Technician (CCT) by EC-Council. Passionate about
+                cybersecurity, networking and automation.
+            </p>
+            <ul class="list-disc pl-5 space-y-1">
+                <li v-for="s in skills" :key="s.id">
+                    <strong>{{ s.label }}:</strong>
+                    <span v-if="s.detail"> {{ s.detail }}</span>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+</template>
+
+<style scoped>
+.icon-size {
+    transform: scale(1.2);
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+</style>
