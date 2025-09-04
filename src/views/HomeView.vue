@@ -18,19 +18,18 @@ let restartTimeout
 let setVhHandler
 
 onMounted(() => {
-    // Allow scroll on mobile; lock only on larger screens
-    if (window.innerWidth >= 768) {
-        document.body.style.overflow = 'hidden'
+    // Set up dynamic viewport height handler for better mobile support
+    setVhHandler = () => {
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
+    setVhHandler()
+    window.addEventListener('resize', setVhHandler)
+    
+    // Allow natural scrolling on mobile for better UX
+    if (window.innerWidth < 768) {
+        document.body.style.overflow = 'auto'
     } else {
-        setVhHandler = () => {
-            const footer = document.getElementById('home-footer')
-            const footerH = footer ? footer.offsetHeight : 0
-            const vh = window.innerHeight - footerH
-            document.documentElement.style.setProperty('--vh', `${vh}px`)
-            document.documentElement.style.setProperty('--footerH', `${footerH}px`)
-        }
-        setVhHandler()
-        window.addEventListener('resize', setVhHandler)
         document.body.style.overflow = 'hidden'
     }
 
@@ -64,7 +63,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <section class="min-h-screen home-hero flex flex-col items-center justify-center text-center overflow-hidden w-full px-6 max-w-5xl mx-auto">
+    <section class="home-hero flex flex-col items-center justify-center text-center w-full px-6 max-w-5xl mx-auto py-16 md:py-0 md:min-h-screen">
         <img
             src="@/assets/img/PixMeAlone.gif"
             alt="Profile"
@@ -105,3 +104,36 @@ onBeforeUnmount(() => {
         </div>
     </section>
 </template>
+
+<style scoped>
+/* Better mobile viewport handling */
+.home-hero {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+@media (max-width: 767px) {
+    .home-hero {
+        min-height: auto;
+        /* Ensure content is centered with proper spacing on mobile */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 6rem; /* Account for navbar */
+        padding-bottom: 2rem;
+        min-height: calc(100vh - 4rem); /* Subtract approximate footer height */
+        min-height: calc(var(--vh, 1vh) * 100 - 4rem);
+    }
+}
+
+/* Ensure proper text wrapping on small screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 0.875rem;
+    }
+}
+</style>
