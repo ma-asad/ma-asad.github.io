@@ -126,7 +126,7 @@ const categories = computed(() => {
     <section class="mb-12 max-w-5xl mx-auto w-full px-6">
         <h2 class="text-2xl font-bold mb-4">Blog</h2>
 
-        <div class="sticky top-0 z-10 bg-white/90 backdrop-blur py-2">
+        <div class="sticky top-0 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur py-2 transition-colors duration-200">
             <div class="flex items-center gap-2">
                 <div class="relative flex-1 max-w-sm">
                     <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs">
@@ -136,32 +136,32 @@ const categories = computed(() => {
                         v-model="query"
                         type="text"
                         placeholder="Search posts..."
-                        class="w-full border border-gray-300 rounded pl-8 pr-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full border border-gray-300 dark:border-gray-600 rounded pl-8 pr-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                     />
                 </div>
                 <!-- Mobile Filter Trigger -->
-                <button class="sm:hidden p-2.5 border rounded text-sm" @click="showFilters = true" aria-label="Open filters">
-                    <font-awesome-icon :icon="['fas', 'filter']" class="text-gray-700" />
+                <button class="sm:hidden p-2.5 border border-gray-300 dark:border-gray-600 rounded text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200" @click="showFilters = true" aria-label="Open filters">
+                    <font-awesome-icon :icon="['fas', 'filter']" class="text-gray-700 dark:text-gray-300" />
                 </button>
                 <!-- Desktop Filters Dropdown -->
                 <details class="relative hidden sm:block">
-                    <summary class="list-none cursor-pointer p-2.5 border rounded text-sm" aria-label="Open filters">
-                        <font-awesome-icon :icon="['fas', 'filter']" class="text-gray-700" />
+                    <summary class="list-none cursor-pointer p-2.5 border border-gray-300 dark:border-gray-600 rounded text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Open filters">
+                        <font-awesome-icon :icon="['fas', 'filter']" class="text-gray-700 dark:text-gray-300" />
                     </summary>
-                    <div class="absolute right-0 mt-2 p-3 bg-white border rounded shadow z-20 w-72">
+                    <div class="absolute right-0 mt-2 p-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow z-20 w-72 transition-colors duration-200">
                         <div class="mb-2">
-                            <label class="block text-xs text-gray-500 mb-1">Category</label>
-                            <select v-model="selectedCategory" class="w-full border border-gray-300 rounded px-2 py-1 text-sm">
+                            <label class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Category</label>
+                            <select v-model="selectedCategory" class="w-full border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
                                 <option v-for="c in categories" :key="c" :value="c">{{ c }}</option>
                             </select>
                         </div>
                         <div class="mb-2">
-                            <label class="block text-xs text-gray-500 mb-1">Start date</label>
-                            <input v-model="startDate" type="date" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" />
+                            <label class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Start date</label>
+                            <input v-model="startDate" type="date" class="w-full border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100" />
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-500 mb-1">End date</label>
-                            <input v-model="endDate" type="date" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" />
+                            <label class="block text-xs text-gray-500 dark:text-gray-400 mb-1">End date</label>
+                            <input v-model="endDate" type="date" class="w-full border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100" />
                         </div>
                     </div>
                 </details>
@@ -171,85 +171,85 @@ const categories = computed(() => {
         <!-- Mobile Filters Bottom Sheet -->
         <div v-if="showFilters" class="fixed inset-0 z-50 sm:hidden">
             <div class="absolute inset-0 bg-black/40" @click="showFilters = false"></div>
-            <div class="absolute inset-x-0 bottom-0 bg-white rounded-t-2xl p-4 max-h-[80vh] overflow-auto filter-sheet">
+            <div class="absolute inset-x-0 bottom-0 bg-white dark:bg-gray-700 rounded-t-2xl p-4 max-h-[80vh] overflow-auto filter-sheet transition-colors duration-200">
                 <div class="mb-3">
-                    <label class="block text-xs text-gray-500 mb-1">Category</label>
-                    <select v-model="selectedCategory" class="w-full border border-gray-300 rounded px-2 py-2 text-sm">
+                    <label class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Category</label>
+                    <select v-model="selectedCategory" class="w-full border border-gray-300 dark:border-gray-600 rounded px-2 py-2 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
                         <option v-for="c in categories" :key="c" :value="c">{{ c }}</option>
                     </select>
                 </div>
                 <div class="grid grid-cols-1 gap-3 min-w-0">
                     <div class="min-w-0">
                         <div class="flex items-center gap-2">
-                            <font-awesome-icon :icon="['fas', 'calendar-days']" class="text-gray-400 text-xs" />
-                            <label class="block text-xs text-gray-500">Start date</label>
+                            <font-awesome-icon :icon="['fas', 'calendar-days']" class="text-gray-400 dark:text-gray-500 text-xs" />
+                            <label class="block text-xs text-gray-500 dark:text-gray-400">Start date</label>
                         </div>
-                        <input v-model="startDate" type="date" class="w-full min-w-0 border border-gray-300 rounded px-2 py-2 text-sm appearance-none" />
+                        <input v-model="startDate" type="date" class="w-full min-w-0 border border-gray-300 dark:border-gray-600 rounded px-2 py-2 text-sm appearance-none bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100" />
                     </div>
                     <div class="min-w-0">
                         <div class="flex items-center gap-2">
-                            <font-awesome-icon :icon="['fas', 'calendar-days']" class="text-gray-400 text-xs" />
-                            <label class="block text-xs text-gray-500">End date</label>
+                            <font-awesome-icon :icon="['fas', 'calendar-days']" class="text-gray-400 dark:text-gray-500 text-xs" />
+                            <label class="block text-xs text-gray-500 dark:text-gray-400">End date</label>
                         </div>
-                        <input v-model="endDate" type="date" class="w-full min-w-0 border border-gray-300 rounded px-2 py-2 text-sm appearance-none" />
+                        <input v-model="endDate" type="date" class="w-full min-w-0 border border-gray-300 dark:border-gray-600 rounded px-2 py-2 text-sm appearance-none bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100" />
                     </div>
                 </div>
                 <div class="mt-4 flex justify-end gap-2">
-                    <button class="px-3 py-2 border rounded" @click="() => { selectedCategory = 'All'; startDate = ''; endDate = '' }">Reset</button>
-                    <button class="px-3 py-2 border rounded bg-gray-800 text-white" @click="showFilters = false">Apply</button>
+                    <button class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200" @click="() => { selectedCategory = 'All'; startDate = ''; endDate = '' }">Reset</button>
+                    <button class="px-3 py-2 border rounded bg-gray-800 dark:bg-gray-700 text-white dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors duration-200" @click="showFilters = false">Apply</button>
                 </div>
             </div>
         </div>
 
-        <div v-if="pinned && pinnedMatchesQuery && currentPage === 1" class="mb-6 p-4 rounded-lg border border-gray-200 bg-gray-50">
+        <div v-if="pinned && pinnedMatchesQuery && currentPage === 1" class="mb-6 p-4 rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 transition-colors duration-200">
             <div class="flex items-start justify-between">
-                <router-link :to="`/post/${pinned.id}`" class="font-semibold text-gray-900 hover:underline">
+                <router-link :to="`/post/${pinned.id}`" class="font-semibold text-gray-900 dark:text-gray-100 hover:underline">
                     {{ pinned.title }}
                 </router-link>
                 <div class="flex items-center gap-2">
-                    <font-awesome-icon :icon="['fas', 'thumbtack']" class="text-gray-400 text-xs rotate-45"/>
-                    <span class="text-xs text-gray-500">{{ pinned.date }}</span>
+                    <font-awesome-icon :icon="['fas', 'thumbtack']" class="text-gray-400 dark:text-gray-500 text-xs rotate-45"/>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">{{ pinned.date }}</span>
                 </div>
             </div>
-            <p class="text-sm text-gray-600 mt-1" v-if="pinned.excerpt">{{ pinned.excerpt }}</p>
-            <div class="text-xs text-gray-500 mt-2">
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1" v-if="pinned.excerpt">{{ pinned.excerpt }}</p>
+            <div class="text-xs text-gray-500 dark:text-gray-400 mt-2">
                 <span v-if="pinned.categories?.length">{{ pinned.categories.join(', ') }}</span>
             </div>
         </div>
 
         <ul class="space-y-3">
-            <li v-for="post in paginatedPosts" :key="post.id" class="p-4 rounded-lg border border-gray-200 bg-white/60 hover:bg-white transition">
+            <li v-for="post in paginatedPosts" :key="post.id" class="p-4 rounded-lg border border-gray-200 dark:border-gray-600 bg-white/60 dark:bg-gray-700/60 hover:bg-white dark:hover:bg-gray-700 transition-colors duration-200">
                 <div class="flex items-center justify-between">
-                    <router-link :to="`/post/${post.id}`" class="font-medium text-gray-900 hover:underline truncate">
+                    <router-link :to="`/post/${post.id}`" class="font-medium text-gray-900 dark:text-gray-100 hover:underline truncate">
                         {{ post.title }}
                     </router-link>
-                    <span class="text-xs text-gray-500 ml-4 shrink-0">{{ post.date }}</span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400 ml-4 shrink-0">{{ post.date }}</span>
                 </div>
-                <p class="text-sm text-gray-600 mt-1 truncate" v-if="post.excerpt">{{ post.excerpt }}</p>
-                <div class="text-xs text-gray-500 mt-1 truncate">
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 truncate" v-if="post.excerpt">{{ post.excerpt }}</p>
+                <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 truncate">
                     <span v-if="post.categories?.length">{{ post.categories.join(', ') }}</span>
                 </div>
             </li>
         </ul>
 
         <!-- Pagination Controls -->
-        <div v-if="totalPages > 1" class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-700">
+        <div v-if="totalPages > 1" class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-700 dark:text-gray-300">
             <button
-                class="disabled:opacity-40 hover:underline"
+                class="disabled:opacity-40 hover:underline transition-colors duration-200"
                 :disabled="currentPage === 1"
                 @click="currentPage = Math.max(1, currentPage - 1)"
             >Prev</button>
             <template v-for="(item, idx) in displayedPages" :key="idx">
                 <button
                     v-if="item.type === 'page'"
-                    class="px-1"
+                    class="px-1 hover:text-[rgb(130,130,6)] dark:hover:text-[rgb(130,130,6)] transition-colors duration-200"
                     :class="{ 'font-semibold underline': item.value === currentPage }"
                     @click="currentPage = item.value"
                 >{{ item.value }}</button>
-                <span v-else class="px-1 text-gray-400">…</span>
+                <span v-else class="px-1 text-gray-400 dark:text-gray-500">…</span>
             </template>
             <button
-                class="disabled:opacity-40 hover:underline"
+                class="disabled:opacity-40 hover:underline transition-colors duration-200"
                 :disabled="currentPage === totalPages"
                 @click="currentPage = Math.min(totalPages, currentPage + 1)"
             >Next</button>

@@ -74,11 +74,11 @@ onBeforeUnmount(() => {
             <span>{{ typedName }}</span>
             <span class="ml-1 opacity-75 animate-pulse">|</span>
         </h1>
-        <p class="mt-2 text-gray-700">
+        <p class="mt-2" style="color: var(--color-text-secondary);">
             {{ currentExp?.title }} at
-            <span class="text-blue-700 font-semibold">{{ currentExp?.company }}</span>
+            <span style="color: var(--color-primary);" class="font-semibold">{{ currentExp?.company }}</span>
         </p>
-        <p class="mt-3 text-gray-600 mx-auto leading-relaxed">
+        <p class="mt-3 mx-auto leading-relaxed" style="color: var(--color-text-tertiary);">
             Passionate about cybersecurity, networking, automation and technology in general.
             <br>
             Oh and I also like Cats! 🐱
@@ -86,13 +86,15 @@ onBeforeUnmount(() => {
         <div class="mt-4 flex items-center space-x-4">
             <RouterLink
                 to="/resume"
-                class="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-3 py-1.5 rounded hover:border-[rgb(130,130,6)] hover:text-[rgb(130,130,6)] transition"
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded transition-colors"
+                style="border: 1px solid var(--color-border-primary); color: var(--color-text-secondary);"
             >
                 Resume
             </RouterLink>
             <RouterLink
                 to="/blog"
-                class="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-3 py-1.5 rounded hover:border-[rgb(130,130,6)] hover:text-[rgb(130,130,6)] transition"
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded transition-colors"
+                style="border: 1px solid var(--color-border-primary); color: var(--color-text-secondary);"
             >
                 <font-awesome-icon :icon="['fas', 'code']" class="text-sm"/>
                 <span>Blog</span>

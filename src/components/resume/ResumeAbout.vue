@@ -21,11 +21,11 @@ const skills = computed(() =>
 
 <template>
     <!-- Intro & Contact Section -->
-    <section class="mb-12 rounded-lg bg-[#f4f4f4] py-8 px-4">
+    <section class="mb-12 rounded-lg bg-[#f4f4f4] dark:bg-gray-600 py-8 px-4">
         <h2 class="text-3xl font-bold mb-4 text-center">
-            <span style="color: #444440; letter-spacing: 0.1em"
+            <span class="text-[#444440] dark:text-gray-200" style="letter-spacing: 0.1em"
                 >MOHAMMAD ASAD </span
-            ><span style="color: #828206; letter-spacing: 0.1em"
+            ><span class="text-[#828206] dark:text-[#828206]" style="letter-spacing: 0.1em"
                 >ATTERKHAN</span
             >
         </h2>
@@ -36,11 +36,11 @@ const skills = computed(() =>
             <p>
                 <a
                     href="tel:+23058455140"
-                    class="text-gray-600 flex items-center"
+                    class="text-gray-600 dark:text-gray-300 flex items-center hover:text-[#828206] dark:hover:text-[#828206] transition-colors group"
                 >
                     <font-awesome-icon
                         :icon="['fas', 'phone']"
-                        class="icon-size mr-1"
+                        class="icon-size mr-1 text-gray-600 dark:text-gray-400 group-hover:text-[rgb(130,130,6)] transition-colors"
                     />
                     +230 5845 5140</a
                 >
@@ -48,36 +48,36 @@ const skills = computed(() =>
             <p>
                 <a
                     href="mailto:masad.atterkhan@gmail.com"
-                    class="text-gray-600 flex items-center"
+                    class="text-gray-600 dark:text-gray-300 flex items-center hover:text-[#828206] dark:hover:text-[#828206] transition-colors group"
                 >
                     <font-awesome-icon
                         :icon="['fas', 'envelope']"
-                        class="icon-size mr-1"
+                        class="icon-size mr-1 text-gray-600 dark:text-gray-400 group-hover:text-[rgb(130,130,6)] transition-colors"
                     />
                     masad.atterkhan@gmail.com</a
                 >
             </p>
-            <p class="text-gray-600 flex items-center">
+            <p class="text-gray-600 dark:text-gray-300 flex items-center">
                 <a
                     href="https://linkedin.com/in/maatterkhan"
-                    class="text-gray-600 flex items-center"
+                    class="text-gray-600 dark:text-gray-300 flex items-center hover:text-[#828206] dark:hover:text-[#828206] transition-colors group"
                 >
                     <font-awesome-icon
                         :icon="['fab', 'linkedin']"
-                        class="icon-size mr-1"
+                        class="icon-size mr-1 text-gray-600 dark:text-gray-400 group-hover:text-[rgb(130,130,6)] transition-colors"
                     />
                     LinkedIn
                 </a>
             </p>
-            <p class="text-gray-600 flex items-center">
+            <p class="text-gray-600 dark:text-gray-300 flex items-center">
                 <a
                     href="https://github.com/ma-asad"
                     target="_blank"
-                    class="text-gray-600 flex items-center"
+                    class="text-gray-600 dark:text-gray-300 flex items-center hover:text-[#828206] dark:hover:text-[#828206] transition-colors group"
                 >
                     <font-awesome-icon
                         :icon="['fab', 'github']"
-                        class="icon-size mr-1"
+                        class="icon-size mr-1 text-gray-600 dark:text-gray-400 group-hover:text-[rgb(130,130,6)] transition-colors"
                     />
                     GitHub
                 </a>
@@ -88,14 +88,14 @@ const skills = computed(() =>
     <!-- About Section -->
     <section class="mb-4">
         <h3
-            class="text-2xl font-bold mb-4 cursor-pointer flex justify-between items-center"
+            class="text-2xl font-bold mb-4 cursor-pointer flex justify-between items-center text-[#444440] dark:text-gray-200"
             @click="isAboutOpen = !isAboutOpen"
         >
-            <span style="color: #444440">About Me</span>
+            <span>About Me</span>
             <span v-if="isAboutOpen">−</span>
             <span v-else>+</span>
         </h3>
-        <div v-if="isAboutOpen" class="text-gray-600 space-y-2">
+        <div v-if="isAboutOpen" class="text-gray-600 dark:text-gray-300 space-y-2">
             <p>
                 IT and Cybesersecurity professional with hands-on experience in system administration, IT support, and
                 cybersecurity. Skilled in managing IT infrastructure across Windows, Linux, and IoT environments. Holds a BSc (Hons) in Computer Science

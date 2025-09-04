@@ -19,7 +19,7 @@ const parsedSkills = computed(() =>
 
 <template>
     <section class="mb-4">
-        <div class="text-gray-600">
+        <div class="text-gray-600 dark:text-gray-300">
             <ul class="list-disc pl-5 space-y-1">
                 <li v-for="s in parsedSkills" :key="s.id">
                     <strong>{{ s.label }}:</strong>

@@ -3,6 +3,88 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Variables */
+:root {
+  /* Theme Colors */
+  --color-primary: rgb(130, 130, 6);
+  --color-primary-hover: rgb(100, 100, 4);
+  
+  /* Light Mode Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #fdfcfb;
+  --color-bg-tertiary: #f3f4f6;
+  --color-bg-quaternary: #e5e7eb;
+  
+  --color-text-primary: #111827;
+  --color-text-secondary: #374151;
+  --color-text-tertiary: #6b7280;
+  --color-text-quaternary: #9ca3af;
+  
+  --color-border-primary: #d1d5db;
+  --color-border-secondary: #e5e7eb;
+  
+  /* Component Colors */
+  --color-nav-bg: rgba(255, 255, 255, 0.95);
+  --color-card-bg: #ffffff;
+  --color-dropdown-bg: #f9fafb;
+  --color-sticky-bg: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark Mode Colors */
+.dark {
+  --color-bg-primary: #1f2937;
+  --color-bg-secondary: #374151;
+  --color-bg-tertiary: #4b5563;
+  --color-bg-quaternary: #6b7280;
+  
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #e5e7eb;
+  --color-text-tertiary: #d1d5db;
+  --color-text-quaternary: #9ca3af;
+  
+  --color-border-primary: #4b5563;
+  --color-border-secondary: #6b7280;
+  
+  /* Component Colors */
+  --color-nav-bg: rgba(31, 41, 55, 0.95);
+  --color-card-bg: #374151;
+  --color-dropdown-bg: #4b5563;
+  --color-sticky-bg: rgba(31, 41, 55, 0.9);
+}
+
+/* Global Transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Dark Mode Root Styles */
+html.dark {
+  @apply bg-gray-800;
+}
+
+html.dark body {
+  @apply bg-gray-800 text-gray-100;
+}
+
+/* Button Hover Styles */
+a[href="/resume"]:hover,
+a[href="/blog"]:hover {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
+
+/* Download Link Hover */
+a[href*="drive.google.com"]:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Navigation Link Hover */
+nav a:hover {
+  color: var(--color-primary) !important;
+}
+
 @layer base {
   #app {
     @apply container flex-grow py-4 min-h-screen flex flex-col px-4 sm:px-6 md:px-16;
@@ -15,6 +97,27 @@
   /* Dynamic viewport height var for mobile */
   :root {
     --vh: 1vh;
+  }
+
+  /* Dark mode base styles */
+  body {
+    @apply transition-colors duration-150;
+  }
+
+  /* Apply dark mode to html element */
+  html.dark {
+    @apply bg-gray-800;
+  }
+
+  html.dark body {
+    @apply bg-gray-800 text-gray-100;
+  }
+
+  /* Optimize transitions for better performance */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
 }
 

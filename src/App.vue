@@ -10,7 +10,7 @@ const isHome = computed(() => route.name === 'home');
 
 <template>
   <NavBar />
-  <main class="max-w-5xl mx-auto w-full px-6">
+  <main class="max-w-5xl mx-auto w-full px-6" style="background-color: var(--color-bg-primary);">
     <RouterView />
   </main>
   <Footer />

@@ -3,10 +3,10 @@
 
 <template>
   <div class="flex space-x-4">
-    <a href="https://github.com/ma-asad" class="text-gray-600">
+    <a href="https://github.com/ma-asad" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
       <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
     </a>
-    <a href="https://linkedin.com/in/maatterkhan" class="text-gray-600">
+    <a href="https://linkedin.com/in/maatterkhan" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
       <font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/>
     </a>
   </div>
