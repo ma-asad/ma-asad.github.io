@@ -80,7 +80,20 @@ onBeforeUnmount(() => {
         <p class="mt-3 mx-auto leading-relaxed" style="color: var(--color-text-tertiary);">
             Passionate about cybersecurity, networking, automation and technology in general.
             <br>
-            Oh and I also like Cats! 🐱
+            Oh and I also like Cats! 
+            <a 
+                href="https://nukochannel.neocities.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                title="Nuko cat by nukochannel"
+                class="inline-block"
+            >
+                <img 
+                    src="@/assets/img/nukoPeekAllSides.gif" 
+                    alt="Nuko cat" 
+                    class="inline-block h-6 w-6 ml-1 align-middle hover:opacity-80 transition-opacity"
+                />
+            </a>
         </p>
         <div class="mt-4 flex items-center space-x-4">
             <RouterLink
